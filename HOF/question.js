@@ -126,18 +126,37 @@ const cart = [
 
 // Expected Output: [ 'coding', 'cooking', 'gaming', 'reading' ]
 
-const users = [
-  { name: "Alex", hobbies: ["coding", "cooking"] },
-  { name: "Sam", hobbies: ["cooking", "gaming"] },
-  { name: "Jamie", hobbies: ["reading", "coding"] },
+// const users = [
+//   { name: "Alex", hobbies: ["coding", "cooking"] },
+//   { name: "Sam", hobbies: ["cooking", "gaming"] },
+//   { name: "Jamie", hobbies: ["reading", "coding"] },
+// ];
+
+// const HashSet = new Set();
+
+// const ans = users.reduce(function(acc,obj){
+//     acc.add(currObj.hobbies[0]);
+//     acc.add(currObj.hobbies[1]);
+//     return acc;
+// },HashSet);
+
+// const HashSet = new Set();
+
+const books = [
+    {title: "Dune", genre:"SCI-Fi"},
+    {title: "The Hobbit", genre:"Fantasy"},
+    {title: "Neuromancer", genre:"SCI-Fi"},
 ];
 
-const HashSet = new Set();
-
-const ans = users.reduce(function(acc,obj){
-    acc.add(currObj.hobbies[0]);
-    acc.add(currObj.hobbies[1]);
+const ans = books.reduce(function(acc, obj){
+    let{genre, title} = obj;
+    if(acc[genre]){
+        acc[genre].push(title);
+    }
+    else{
+        acc[genre] = [title];
+    }
     return acc;
-},HashSet);
+},{});
 
 console.log(ans);
