@@ -148,15 +148,29 @@ const books = [
     {title: "Neuromancer", genre:"SCI-Fi"},
 ];
 
-const ans = books.reduce(function(acc, obj){
-    let{genre, title} = obj;
-    if(acc[genre]){
-        acc[genre].push(title);
-    }
-    else{
-        acc[genre] = [title];
-    }
-    return acc;
-},{});
+// const ans = books.reduce(function(acc, obj){
+//     let{genre, title} = obj;
+//     if(acc[genre]){
+//         acc[genre].push(title);
+//     }
+//     else{
+//         acc[genre] = [title];
+//     }
+//     return acc;
+// },{});
 
+//question 6
+
+const employees = [
+    {name: "Alice", dept: "Engineering", salary: 95000},
+    {name: "Bob", dept: "HR", salary: 50000},
+    {name: "Charlie", dept: "Engineering", salary: 85000},
+    {name: "Alex", dept: "Engineering", salary: 120000},
+];
+
+const ans = employees.filter(function(obj){
+    return obj.dept == "Engineering" && obj.salary > 90000;
+}).map(function(obj){
+    return obj.name;
+})
 console.log(ans);
