@@ -247,9 +247,11 @@ const ans = array.reduce(function (acc, currEle) {
     acc[currEle] = acc[currEle]+1;
   }
   else{
-    acc[currEle] = 1;
+    acc
   }
   return acc;
 }, {})
 // Expected Output -- { the: 3, cat: 1, chased: 1, mouse: 2, and: 1, ran: 1, away: 1 }
+
+
 console.log(ans);
