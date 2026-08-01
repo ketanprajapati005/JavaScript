@@ -205,22 +205,22 @@ const books = [
 
 // Question 9 -- find the average score of students who passed (scored 50 or above).
 
-const students = [
-  { name: "Tom", score: 45 },
-  { name: "Sara", score: 80 },
-  { name: "Ben", score: 90 },
-  { name: "Lucy", score: 30 },
-];
+// const students = [
+//   { name: "Tom", score: 45 },
+//   { name: "Sara", score: 80 },
+//   { name: "Ben", score: 90 },
+//   { name: "Lucy", score: 30 },
+// ];
 
-const filteredArray= students.filter(function(obj){
-  return obj.score > 50;
-});
+// const filteredArray= students.filter(function(obj){
+//   return obj.score > 50;
+// });
 
-const avg = filteredArray.reduce(function(acc,obj){
-  return acc + obj.score;
-},0) / filteredArray.length;
+// const avg = filteredArray.reduce(function(acc,obj){
+//   return acc + obj.score;
+// },0) / filteredArray.length;
 
-console.log(avg);
+// console.log(avg);
 
 // Expected Output: 85
 
@@ -229,5 +229,27 @@ console.log(avg);
 
 //Input: "The cat chased the mouse and the mouse ran away"
 
+const array= [
+  "the",
+  "cat",
+  "chased",
+  "the",
+  "mouse",
+  "and",
+  "the",
+  "mouse",
+  "ran",
+  "away"
+];
+
+const ans = array.reduce(function (acc, currEle) {
+  if (acc[currEle]) {
+    acc[currEle] = acc[currEle]+1;
+  }
+  else{
+    acc[currEle] = 1;
+  }
+  return acc;
+}, {})
 // Expected Output -- { the: 3, cat: 1, chased: 1, mouse: 2, and: 1, ran: 1, away: 1 }
-// console.log(ans);
+console.log(ans);
