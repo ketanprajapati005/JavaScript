@@ -187,16 +187,16 @@ const books = [
 
 
 // question 8
-const usersList = [
-  { id: "u1", name: "Emma", role: "Admin" },
-  { id: "u2", name: "Liam", role: "User" },
-];
+// const usersList = [
+//   { id: "u1", name: "Emma", role: "Admin" },
+//   { id: "u2", name: "Liam", role: "User" },
+// ];
 
 
-const ans = usersList.reduce(function(acc, obj){
-  acc[obj.id] = obj;
-  return acc;
-}, {});
+// const ans = usersList.reduce(function(acc, obj){
+//   acc[obj.id] = obj;
+//   return acc;
+// }, {});
 // Expected Output
 // {
 //   "u1": { id: "u1", name: "Emma", role: "Admin" },
@@ -212,6 +212,16 @@ const students = [
   { name: "Lucy", score: 30 },
 ];
 
+const filteredArray= students.filter(function(obj){
+  return obj.score > 50;
+});
+
+const avg = filteredArray.reduce(function(acc,obj){
+  return acc + obj.score;
+},0) / filteredArray.length;
+
+console.log(avg);
+
 // Expected Output: 85
 
 // Question 10 Given a string of text, split it into words, and use reduce to count how many times each word appears.
@@ -220,4 +230,4 @@ const students = [
 //Input: "The cat chased the mouse and the mouse ran away"
 
 // Expected Output -- { the: 3, cat: 1, chased: 1, mouse: 2, and: 1, ran: 1, away: 1 }
-console.log(ans);
+// console.log(ans);
