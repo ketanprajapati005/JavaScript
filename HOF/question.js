@@ -161,16 +161,63 @@ const books = [
 
 //question 6
 
-const employees = [
-    {name: "Alice", dept: "Engineering", salary: 95000},
-    {name: "Bob", dept: "HR", salary: 50000},
-    {name: "Charlie", dept: "Engineering", salary: 85000},
-    {name: "Alex", dept: "Engineering", salary: 120000},
+// const employees = [
+//     {name: "Alice", dept: "Engineering", salary: 95000},
+//     {name: "Bob", dept: "HR", salary: 50000},
+//     {name: "Charlie", dept: "Engineering", salary: 85000},
+//     {name: "Alex", dept: "Engineering", salary: 120000},
+// ];
+
+// const ans = employees.filter(function(obj){
+//     return obj.dept == "Engineering" && obj.salary > 90000;
+// }).map(function(obj){
+//     return obj.name;
+// })
+
+//Question 7 .
+// const products = [
+//     {id:1, name:"laptop", rating:4.2},
+//     {id:2, name:"keyboard", rating:4.0},
+//     {id:3, name:"mobile", rating:4.5},
+// ]
+
+// const ans = products.reduce(function(acc, obj){
+//     return acc.rating > obj.rating ? acc : obj;
+// });
+
+
+// question 8
+const usersList = [
+  { id: "u1", name: "Emma", role: "Admin" },
+  { id: "u2", name: "Liam", role: "User" },
 ];
 
-const ans = employees.filter(function(obj){
-    return obj.dept == "Engineering" && obj.salary > 90000;
-}).map(function(obj){
-    return obj.name;
-})
+
+const ans = usersList.reduce(function(acc, obj){
+  acc[obj.id] = obj;
+  return acc;
+}, {});
+// Expected Output
+// {
+//   "u1": { id: "u1", name: "Emma", role: "Admin" },
+//   "u2": { id: "u2", name: "Liam", role: "User" }
+// }
+
+// Question 9 -- find the average score of students who passed (scored 50 or above).
+
+const students = [
+  { name: "Tom", score: 45 },
+  { name: "Sara", score: 80 },
+  { name: "Ben", score: 90 },
+  { name: "Lucy", score: 30 },
+];
+
+// Expected Output: 85
+
+// Question 10 Given a string of text, split it into words, and use reduce to count how many times each word appears.
+// Convert all words to lowercase so the count is case-insensitive.
+
+//Input: "The cat chased the mouse and the mouse ran away"
+
+// Expected Output -- { the: 3, cat: 1, chased: 1, mouse: 2, and: 1, ran: 1, away: 1 }
 console.log(ans);
