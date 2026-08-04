@@ -65,7 +65,6 @@ let cb =function (acc,currEle){
 
 Array.prototype.customFilter = function (cb, defaultValue){
     let inputArray = this;
-    let ans = null;
 
     let index = 0;
     let acc = defaultValue;
